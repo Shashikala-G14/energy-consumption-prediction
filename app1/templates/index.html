@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Consumption Prediction</title>
+</head>
+
+<body>
+    <h1>Predict Energy Consumption</h1>
+    <div style="font-size: 30px;">
+        <form method="post">
+            {% csrf_token %}
+            <label for="temperature">Temprature (degree celcius)</label>
+            <input type="text" id="temperature" name="temperature" required><br><br>
+            <button style="font-size: 20px;" type="submit">Predict</button>
+        </form>
+        {% if result %}
+        <h1>Predicted Result is {{ result }}</h1>
+      
+        {% endif %}
+    </div>
+</body>
+
+</html>
